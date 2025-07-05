@@ -1,0 +1,17 @@
+{
+"name": "/data/tiles/",
+"description": "/data/tiles/",
+"version": "2",
+"minzoom": "0",
+"maxzoom": "11",
+"center": "-9.404297,38.754050,11",
+"bounds": "-9.517029,36.961710,-6.189159,42.154311",
+"antimeridian_adjusted_bounds": "-9.517029,36.961710,-6.189159,42.154311",
+"type": "overlay",
+"strategies": "[{\"tiny_polygons\":6},{\"tiny_polygons\":6},{\"tiny_polygons\":5},{\"tiny_polygons\":5},{\"tiny_polygons\":5},{\"tiny_polygons\":4},{\"tiny_polygons\":4},{\"tiny_polygons\":4},{\"tiny_polygons\":4},{\"tiny_polygons\":7},{\"tiny_polygons\":9},{\"tiny_polygons\":11}]",
+"tippecanoe_decisions": "{\"basezoom\":11,\"droprate\":1,\"retain_points_multiplier\":1}",
+"format": "pbf",
+"generator": "tippecanoe v2.53.0",
+"generator_options": "tippecanoe -r1 -pk -pf '--output-to-directory=/data/tiles/' --force '--maximum-zoom=11' --extend-zooms-if-still-dropping --no-tile-compression /data/cont_distritos.geojson",
+"json": "{\"vector_layers\":[{\"id\":\"cont_distritos\",\"description\":\"\",\"minzoom\":0,\"maxzoom\":11,\"fields\":{\"area_ha\":\"Number\",\"distrito\":\"String\",\"dt\":\"String\",\"n_freguesias\":\"Number\",\"n_municipios\":\"Number\",\"nuts1\":\"String\",\"perimetro_km\":\"Number\"}}],\"tilestats\":{\"layerCount\":1,\"layers\":[{\"layer\":\"cont_distritos\",\"count\":18,\"geometry\":\"Polygon\",\"attributeCount\":7,\"attributes\":[{\"attribute\":\"area_ha\",\"count\":18,\"type\":\"number\",\"values\":[1026332.49,221884.16,233165.17,270615.05,280094.16,281613.57,350578.68,397373.28,430747.08,499679.49,500978.72,521405.92,553530.81,608444.5,659853.71,662747.31,671823.76,739346.41],\"min\":221884.16,\"max\":1026332.49},{\"attribute\":\"distrito\",\"count\":18,\"type\":\"string\",\"values\":[\"Aveiro\",\"Beja\",\"Braga\",\"Bragança\",\"Castelo Branco\",\"Coimbra\",\"Faro\",\"Guarda\",\"Leiria\",\"Lisboa\",\"Portalegre\",\"Porto\",\"Santarém\",\"Setúbal\",\"Viana do Castelo\",\"Vila Real\",\"Viseu\",\"Évora\"]},{\"attribute\":\"dt\",\"count\":18,\"type\":\"string\",\"values\":[\"01\",\"02\",\"03\",\"04\",\"05\",\"06\",\"07\",\"08\",\"09\",\"10\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\",\"17\",\"18\"]},{\"attribute\":\"n_freguesias\",\"count\":17,\"type\":\"number\",\"values\":[110,120,134,141,147,155,197,208,226,242,243,277,347,55,67,69,75],\"min\":55,\"max\":347},{\"attribute\":\"n_municipios\",\"count\":12,\"type\":\"number\",\"values\":[10,11,12,13,14,15,16,17,18,19,21,24],\"min\":10,\"max\":24},{\"attribute\":\"nuts1\",\"count\":1,\"type\":\"string\",\"values\":[\"Continente\"]},{\"attribute\":\"perimetro_km\",\"count\":18,\"type\":\"number\",\"values\":[266,339,348,351,376,437,476,480,516,527,540,550,569,582,636,676,703,762],\"min\":266,\"max\":762}]}]}}"
+}
