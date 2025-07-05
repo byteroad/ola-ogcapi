@@ -38,6 +38,7 @@ docker run -it --rm -v $(pwd)/data:/data emotionalcities/tippecanoe \
 tippecanoe -r1 -pk -pf --output-to-directory=/data/tiles/ --force --maximum-zoom=11 \
 --extend-zooms-if-still-dropping --no-tile-compression /data/cont_distritos.geojson
 ```
+![CAOP 2024](caop2024.png)
 
 ## License
 
