@@ -29,8 +29,8 @@ A configuração do serviço `pygeoapi` está descrita nos ficheiros [./docker-c
 
 O conjunto de dados usado neste exemplo é a [Carta Administrativa Oficial de Portugal - CAOP2024 (Continente) - Distritos](https://snig.dgterritorio.gov.pt/rndg/srv/por/catalog.search#/metadata/198497815bf647ecaa990c34c42e932e); está armazenado na directoria [./data]([./data]) em formato geopackage, geojson e tiles vetoriais.
 
-As tiles vetoriais contidas em [./data/tiles]([./data/tiles]) foram geradas com o seguinte comando (a partir da raiz desta directoria):
-
+As tiles vetoriais contidas em [./data/tiles/](./data/tiles) foram geradas com o seguinte comando (a partir da raiz desta directoria):
+/
 ```bash
 docker run -it --rm -v $(pwd)/data:/data emotionalcities/tippecanoe \
 tippecanoe -r1 -pk -pf --output-to-directory=/data/tiles/ --force --maximum-zoom=11 \

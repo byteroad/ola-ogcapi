@@ -38,7 +38,7 @@ server:
     languages:
         - pt-PT
         - en-US
-    # cors: true
+    cors: true
     pretty_print: true
     limits:
         default_items: 20
