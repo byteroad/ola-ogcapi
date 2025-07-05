@@ -39,6 +39,6 @@ tippecanoe -r1 -pk -pf --output-to-directory=/data/tiles/ --force --maximum-zoom
 
 ## License
 
-This project is released under an [MIT License](./LICENSE)
+Este projecto está publicado com uma licença [MIT License](./LICENSE)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
