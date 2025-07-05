@@ -58,7 +58,7 @@ metadata:
             pt: Instância de defeito da pygeoapi
             en: pygeoapi default instance
         description:
-            pt: pygeoapi oferece uma API para dados geospaciais
+            pt: A pygeoapi oferece uma API para dados geospaciais
             en: pygeoapi provides an API to geospatial data
         keywords:
             pt:
