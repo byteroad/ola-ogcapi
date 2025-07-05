@@ -2,6 +2,8 @@
 
 Este repositório apresenta um exemplo simples de publicação de dados vetoriais e raster usando a pygeoapi. [pygeoapi](https://pygeoapi.io/) é uma implementação de servidor Python da suíte de Standards OGC API.
 
+![Endpoints OGCAPI](endpoints-ogcapi.png)
+
 ## Setup Rápido
 
 Para executar este exemplo, é necessário ter o `docker` e `docker-compose` instalados no sistema. 
