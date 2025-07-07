@@ -44,7 +44,8 @@ server:
         default_items: 20
         max_items: 50
     map:
-        url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+        #url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+        url: https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg
         attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
     admin: false # enable admin api
 
