@@ -183,9 +183,9 @@ resources:
               data:
                 host: postgis
                 port: 5432 # default port
-                dbname: postgres
-                user: postgres
-                password: mypassword
+                dbname: ${POSTGRES_DB}
+                user: ${POSTGRES_USER}
+                password: ${POSTGRES_PASSWORD}
                 search_path: [public]
               id_field: id
               table: crus_obidos
@@ -195,9 +195,9 @@ resources:
               data:
                     host: postgis
                     port: 5432
-                    dbname: postgres
-                    user: postgres
-                    password: mypassword
+                    dbname: ${POSTGRES_DB}
+                    user: ${POSTGRES_USER}
+                    password: ${POSTGRES_PASSWORD}
                     search_path: [public]
               id_field: id
               table: crus_obidos

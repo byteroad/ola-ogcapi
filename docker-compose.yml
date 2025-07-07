@@ -39,6 +39,8 @@ services:
     environment:
       PYGEOAPI_CONFIG: docker-config.yml
       PYGEOAPI_OPENAPI: example-openapi.yml
+    env_file:
+      - .env
     volumes:
       - ./docker.config.yml:/pygeoapi/local.config.yml
       - ./data/:/data/
@@ -55,9 +57,9 @@ services:
     container_name: postgis
 
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: postgres
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
 
     volumes:
       - pg_data:/var/lib/postgresql/data
