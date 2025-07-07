@@ -25,7 +25,15 @@ docker compose up -d
 
 ## Configuração
 
-A configuração do serviço `pygeoapi` está descrita nos ficheiros [./docker-compose.yml](./docker-compose.yml) e [./docker.config.yml](./docker.config.yml). 
+A configuração do serviço `pygeoapi` está descrita nos ficheiros [./docker-compose.yml](./docker-compose.yml) e [./docker.config.yml](./docker.config.yml).
+
+As variáveis de ambiente, devem ser configuradas num ficheiro `.env` na raiz desta directoria. Exemplo:
+
+```
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=mypassword
+POSTGRES_DB=postgres
+```
 
 ## Dados
 
