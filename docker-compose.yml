@@ -26,18 +26,46 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 #
 # =================================================================
+version: "3.0" # For docker compose viz
 
 services:
 
   pygeoapi:
-    image: geopython/pygeoapi:0.20.0
+    image: geopython/pygeoapi:latest
+
     container_name: pygeoapi
+
     ports:
       - "5001:80"
     environment:
       PYGEOAPI_CONFIG: docker-config.yml
       PYGEOAPI_OPENAPI: example-openapi.yml
+    env_file:
+      - .env
     volumes:
       - ./docker.config.yml:/pygeoapi/local.config.yml
       - ./data/:/data/
+    links:
+      - postgis
 
+    depends_on:
+      - postgis
+    restart: on-failure
+
+  postgis:
+    image: postgis/postgis
+
+    container_name: postgis
+
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./data/init0.sql:/docker-entrypoint-initdb.d/00-init.sql
+    restart: on-failure
+
+volumes:
+  pg_data: {}

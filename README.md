@@ -29,16 +29,23 @@ A configuração do serviço `pygeoapi` está descrita nos ficheiros [./docker-c
 
 ## Dados
 
-O conjunto de dados usado neste exemplo é a [Carta Administrativa Oficial de Portugal - CAOP2024 (Continente) - Distritos](https://snig.dgterritorio.gov.pt/rndg/srv/por/catalog.search#/metadata/198497815bf647ecaa990c34c42e932e); está armazenado na directoria [./data]([./data]) em formato geopackage, geojson e tiles vetoriais.
+Os conjuntos de dados usados neste exemplo são a [Carta Administrativa Oficial de Portugal - CAOP2024 (Continente) - Distritos](https://snig.dgterritorio.gov.pt/rndg/srv/por/catalog.search#/metadata/198497815bf647ecaa990c34c42e932e) e a [Carta do Regime de Uso do Solo - ÓBIDOS](https://snig.dgterritorio.gov.pt/rndg/srv/por/catalog.search#/metadata/517c5023-04cc-47a4-99f7-bb32814dd62f); estão armazenados na directoria [./data]([./data]) em formato geopackage e BD (dump de PostGIS).
 
-As tiles vetoriais contidas em [./data/tiles/](./data/tiles) foram geradas com o seguinte comando (a partir da raiz desta directoria):
+<!-- As tiles vetoriais contidas em [./data/tiles/](./data/tiles) foram geradas com o seguinte comando (a partir da raiz desta directoria):
 /
 ```bash
 docker run -it --rm -v $(pwd)/data:/data emotionalcities/tippecanoe \
 tippecanoe -r1 -pk -pf --output-to-directory=/data/tiles/ --force --maximum-zoom=11 \
 --extend-zooms-if-still-dropping --no-tile-compression /data/cont_distritos.geojson
-```
-![CAOP 2024](caop2024.png)
+``` -->
+<!-- ![CAOP 2024](caop2024.png) -->
+
+<table>
+    <tr>
+        <td><img src="caop2024.png" alt="CAOP 2024"></td>
+        <td><img src="crus-obidos.png" alt="CRUS Obidos"></td>
+    </tr>
+</table>
 
 ## License
 
