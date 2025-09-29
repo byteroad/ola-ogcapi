@@ -38,8 +38,8 @@ services:
     ports:
       - "5001:80"
     environment:
-      PYGEOAPI_CONFIG: /pygeoapi/docker-config.yml
-      PYGEOAPI_OPENAPI: /pygeoapi/example-openapi.yml
+      PYGEOAPI_CONFIG: docker-config.yml
+      PYGEOAPI_OPENAPI: example-openapi.yml
     env_file:
       - .env
     volumes:
