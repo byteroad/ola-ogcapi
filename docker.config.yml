@@ -48,6 +48,9 @@ server:
         url: https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg
         attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
     admin: false # enable admin api
+    templates:
+        path: /pygeoapi/themes/hand-drawn/templates
+        static: /pygeoapi/themes/hand-drawn/static
 
 logging:
     level: ERROR

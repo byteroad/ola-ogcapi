@@ -2,7 +2,7 @@
 #
 # Authors: doublebyte1 <jo@byteroad.net>>
 #
-# Copyright (c) 2025 doublebyte
+# Copyright (c) 2026 doublebyte
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation
@@ -31,10 +31,8 @@ version: "3.0" # For docker compose viz
 services:
 
   pygeoapi:
-    image: geopython/pygeoapi:latest
-
+    build: .
     container_name: pygeoapi
-
     ports:
       - "5001:80"
     environment:
@@ -43,10 +41,12 @@ services:
     env_file:
       - .env
     volumes:
+      - ./themes:/pygeoapi/themes
       - ./docker.config.yml:/pygeoapi/docker-config.yml
       - ./data/:/data/
     links:
       - postgis
+    command: run-with-hot-reload
 
     depends_on:
       - postgis
