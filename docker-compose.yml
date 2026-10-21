@@ -30,6 +30,7 @@ version: "3.0" # For docker compose viz
 
 services:
 
+  # Templated pygeoapi (build from Dockerfile)
   pygeoapi:
     build: .
     container_name: pygeoapi
@@ -38,6 +39,10 @@ services:
     environment:
       PYGEOAPI_CONFIG: docker-config.yml
       PYGEOAPI_OPENAPI: example-openapi.yml
+      PGHOST: postgis
+      PGUSER: postgres
+      PGDATABASE: postgres
+      # Note: define PGPASSWORD on .env
     env_file:
       - .env
     volumes:
@@ -47,25 +52,29 @@ services:
     links:
       - postgis
     command: run-with-hot-reload
-
     depends_on:
-      - postgis
+       postgis:
+         condition: service_healthy
     restart: on-failure
 
+  # postgis service, bootstrapped with data
   postgis:
     image: postgis/postgis
-
     container_name: postgis
-
+    env_file:
+      - .env
     environment:
-      - POSTGRES_USER
-      - POSTGRES_PASSWORD
-      - POSTGRES_DB
-
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${PGPASSWORD}
+      POSTGRES_DB: postgres
     volumes:
       - pg_data:/var/lib/postgresql/data
       - ./data/init0.sql:/docker-entrypoint-initdb.d/00-init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      retries: 10
     restart: on-failure
-
+    
 volumes:
   pg_data: {}
