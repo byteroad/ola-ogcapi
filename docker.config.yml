@@ -2,7 +2,7 @@
 #
 # Authors: doublebyte1 <jo@byteroad.net>>
 #
-# Copyright (c) 2025 doublebyte
+# Copyright (c) 2026 doublebyte
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation
@@ -47,7 +47,7 @@ server:
         #url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
         url: https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg
         attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-    admin: false # enable admin api
+    admin: true # DO NOT enable this in production, unprotected instances!
     templates:
         path: /pygeoapi/themes/hand-drawn/templates
         static: /pygeoapi/themes/hand-drawn/static
@@ -143,17 +143,6 @@ resources:
               format:
                     name: png
                     mimetype: image/png
-            # - type: tile
-            #   name: MVT-tippecanoe
-            #   data: /data/tiles/
-            #   options:
-            #     bounds: [[-9.51,36.96],[-6.19,42.15]]
-            #     zoom:
-            #         min: 0
-            #         max: 11
-            #   format: 
-            #         name: pbf
-            #         mimetype: application/vnd.mapbox-vector-tile
 
     crus_obidos:
         title: CRUS ÓBIDOS
