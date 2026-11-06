@@ -9,6 +9,16 @@ Este repositório apresenta um exemplo simples de publicação de dados vetoriai
 Para executar este exemplo, é necessário ter o `docker` e `docker-compose` instalados no sistema. 
 [Esta página](https://dive.pygeoapi.io/setup/) apresenta instruções para instalar o docker (em inglês). Também é necessário acesso a um terminal e a um editor de texto.
 
+## Configuração
+
+A configuração do serviço `pygeoapi` está descrita nos ficheiros [./docker-compose.yml](./docker-compose.yml) e [./docker.config.yml](./docker.config.yml).
+
+A variável de ambiente `PGPASSWORD` deve ser configurada num ficheiro `.env` na raiz desta directoria. Exemplo:
+
+```
+PGPASSWORD=somepassword
+```
+
 ## Iniciar a pygeoapi
 
 Abrir um terminal na raiz deste repositório e executar:
@@ -23,15 +33,15 @@ Ou se quiser correr o processo no background:
 docker compose up -d
 ```
 
-## Configuração
+## Aceder à pygeoapi
 
-A configuração do serviço `pygeoapi` está descrita nos ficheiros [./docker-compose.yml](./docker-compose.yml) e [./docker.config.yml](./docker.config.yml).
+Depois de iniciar os containers, o servidor fica disponível em [http://localhost:5001](http://localhost:5001).
 
-A variável de ambiente `PGPASSWORD` deve ser configurada num ficheiro `.env` na raiz desta directoria. Exemplo:
+- [http://localhost:5001/collections](http://localhost:5001/collections) - lista das colecções de dados
+- `http://localhost:5001/collections/{id}/items` - features de uma colecção
+- [http://localhost:5001/openapi](http://localhost:5001/openapi) - documentação interactiva da API (Swagger)
 
-```
-PGPASSWORD=somepassword
-```
+Para obter a resposta em JSON em vez de HTML, basta acrescentar `?f=json` a qualquer URL.
 
 ## Dados
 
